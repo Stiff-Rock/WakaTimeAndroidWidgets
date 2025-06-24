@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WakaTimeWidgets</string>
+    <string name="title">WakaTime Widgets</string>
+    <string name="wakatime_api_key">WakaTime API key</string>
+    <string name="save">Save</string>
+    <string name="current_user"><u>Current user</u></string>
+    <string name="none">none</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="lang_widget_desc">WakaTime languages stats</string>
+</resources>
