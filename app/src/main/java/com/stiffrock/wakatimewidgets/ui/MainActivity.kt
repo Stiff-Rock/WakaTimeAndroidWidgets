@@ -17,8 +17,10 @@ import com.stiffrock.wakatimewidgets.data.WakaTimeApi
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private var prefsFileName = "user_prefs"
-    private var apiKeyPref = "user_api_key"
+    companion object {
+        const val PREFS_FILENAME = "user_prefs"
+        const val API_KEY_PREF = "user_api_key"
+    }
 
     private lateinit var currentUserTextView: TextView
     private lateinit var wakaTimeApiKeyInput: EditText
@@ -37,9 +39,9 @@ class MainActivity : AppCompatActivity() {
         saveBtn = findViewById(R.id.saveBtn)
 
         sharedPreferences =
-            this.getSharedPreferences(prefsFileName, Context.MODE_PRIVATE)
+            this.getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE)
 
-        val savedApiKey = sharedPreferences.getString(apiKeyPref, null)
+        val savedApiKey = sharedPreferences.getString(API_KEY_PREF, null)
 
         if (savedApiKey != null) {
             fetchUserData(savedApiKey, false)
@@ -55,7 +57,9 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            fetchUserData(apiKey, true)
+            val formattedKey = WakaTimeApi.formatApiKey(apiKey)
+
+            fetchUserData(formattedKey, true)
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -68,36 +72,38 @@ class MainActivity : AppCompatActivity() {
     private fun fetchUserData(apiKey: String, save: Boolean) {
         lifecycleScope.launch {
             try {
-                val formattedKey = WakaTimeApi.formatApiKey(apiKey)
-                val response = WakaTimeApi.service.getCurrentUser(formattedKey)
+                val response = WakaTimeApi.service.getCurrentUser(apiKey)
 
-                if (response.isSuccessful) {
-                    val username = response.body()?.data?.username
-
-                    if (save){
-                        sharedPreferences.edit().apply {
-                            putString(apiKeyPref, apiKey)
-                            apply()
-                        }
-                    }
-
-                    if (username != null) {
-                        currentUserTextView.text = username
-                        Toast.makeText(
-                            this@MainActivity,
-                            "Successfully saved API key",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    } else {
-                        Toast.makeText(
-                            this@MainActivity, "Failed to get username", Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                } else {
+                if (!response.isSuccessful) {
                     Toast.makeText(
                         this@MainActivity, "API Error: ${response.code()}", Toast.LENGTH_SHORT
                     ).show()
+                    return@launch
                 }
+
+                val body = response.body()
+                val username = body?.data?.username
+                if (save) {
+                    sharedPreferences.edit().apply {
+                        putString(API_KEY_PREF, apiKey)
+                        apply()
+                    }
+                }
+
+                if (username == null) {
+                    Toast.makeText(
+                        this@MainActivity, "Failed to get username", Toast.LENGTH_SHORT
+                    ).show()
+                    return@launch
+                }
+
+                currentUserTextView.text = username
+                Toast.makeText(
+                    this@MainActivity,
+                    "Successfully saved API key",
+                    Toast.LENGTH_SHORT
+                ).show()
+
             } catch (e: Exception) {
                 Toast.makeText(this@MainActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }

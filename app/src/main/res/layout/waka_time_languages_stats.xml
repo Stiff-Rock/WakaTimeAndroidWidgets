@@ -1,21 +1,50 @@
-<RelativeLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:id="@+id/langWidgetRoot"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         style="@style/Widget.WakatimeWidgets.AppWidget.Container"
+        android:background="@color/black"
         android:theme="@style/Theme.WakatimeWidgets.AppWidgetContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <TextView
-            style="@style/Widget.WakatimeWidgets.AppWidget.InnerView"
-            android:id="@+id/appwidget_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="@string/appwidget_text"
-            android:textSize="24sp"
-            android:textStyle="bold|italic"
-            android:layout_margin="8dp"
-            android:contentDescription="@string/appwidget_text" />
-</RelativeLayout>
+            style="@style/LanguageTextView"
+            android:id="@+id/lang1"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang2"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang3"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang4"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang5"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang6"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang7"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang8"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang9"/>
+
+    <TextView
+            style="@style/LanguageTextView"
+            android:id="@+id/lang10"/>
+
+</LinearLayout>

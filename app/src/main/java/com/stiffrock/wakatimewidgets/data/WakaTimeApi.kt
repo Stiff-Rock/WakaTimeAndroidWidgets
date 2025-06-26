@@ -1,18 +1,13 @@
 package com.stiffrock.wakatimewidgets.data
 
 import android.util.Base64
+import com.stiffrock.wakatimewidgets.data.model.LangStatsResponse
+import com.stiffrock.wakatimewidgets.data.model.UserResponse
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Header
-
-// Data models
-data class WakaTimeUser(
-    val username: String
-)
-
-data class UserResponse(val data: WakaTimeUser)
 
 // API interface
 interface WakaTimeApiService {
@@ -20,6 +15,11 @@ interface WakaTimeApiService {
     suspend fun getCurrentUser(
         @Header("Authorization") authorization: String
     ): Response<UserResponse>
+
+    @GET("users/current/stats/last_7_days")
+    suspend fun getLangStats(
+        @Header("Authorization") authorization: String
+    ): Response<LangStatsResponse>
 }
 
 // API client singleton

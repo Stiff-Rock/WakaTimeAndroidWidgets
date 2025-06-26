@@ -10,5 +10,5 @@
         android:widgetCategory="home_screen"
         android:previewLayout="@layout/waka_time_languages_stats"
         android:targetCellHeight="2"
-        android:targetCellWidth="3"
+        android:targetCellWidth="2"
         android:initialKeyguardLayout="@layout/waka_time_languages_stats" />
