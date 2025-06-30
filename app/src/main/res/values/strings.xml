@@ -9,4 +9,12 @@
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
     <string name="lang_widget_desc">WakaTime languages stats</string>
+    <string name="graph_bar_segment">Graph bar segment</string>
+    <string name="lang_stats_example_title">Language Stats - John Doe</string>
+    <string name="lang_stats_ex_1">Kotlin - 3hrs 7mins (38.98%)</string>
+    <string name="lang_stats_ex_2">TypeScript - 1hr 58mins (24.66%)</string>
+    <string name="lang_stats_ex_3">XML - 1hr 5mins (13.5%)</string>
+    <string name="lang_stats_ex_4">Rust - 1hr (12.43%)</string>
+    <string name="lang_stats_ex_5">JavaScript - 50mins (10.43%)</string>
+    <string name="color_indicator_for_language_stats">Color indicator for language stats</string>
 </resources>

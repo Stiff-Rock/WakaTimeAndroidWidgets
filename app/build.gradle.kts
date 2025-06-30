@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.stiffrock.wakatimewidgets"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -39,8 +39,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.snakeyaml)
+
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    implementation(libs.converter.scalars)
 
     implementation(libs.kotlin.stdlib)
     implementation(libs.androidx.lifecycle.runtime.ktx)

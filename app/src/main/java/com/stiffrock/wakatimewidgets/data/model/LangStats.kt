@@ -10,7 +10,8 @@ data class Language(
     val decimal: String,
     val text: String,
     val hours: Int,
-    val minutes: Int
+    val minutes: Int,
+    var color: String? = null
 )
 
 // Default eequals and hashCode functions to avoid warnings

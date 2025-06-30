@@ -1,50 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:id="@+id/langWidgetRoot"
-        style="@style/Widget.WakatimeWidgets.AppWidget.Container"
         android:background="@color/black"
+        android:padding="15dp"
         android:theme="@style/Theme.WakatimeWidgets.AppWidgetContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang1"/>
+            android:id="@+id/widget_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lang_stats_example_title"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang2"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_background"
+            android:clipToOutline="true"
+            tools:targetApi="s">
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang3"/>
+        <ImageView
+                android:id="@+id/bar_segment_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="38.98"
+                android:background="#A97BFF"
+                android:contentDescription="@string/graph_bar_segment" />
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang4"/>
+        <ImageView
+                android:id="@+id/bar_segment_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="24.66"
+                android:background="#3178C6"
+                android:contentDescription="@string/graph_bar_segment"
+                tools:ignore="ImageContrastCheck" />
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang5"/>
+        <ImageView
+                android:id="@+id/bar_segment_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="13.5"
+                android:background="#0060AC"
+                android:contentDescription="@string/graph_bar_segment"
+                tools:ignore="ImageContrastCheck" />
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang6"/>
+        <ImageView
+                android:id="@+id/bar_segment_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="12.43"
+                android:background="#DEA584"
+                android:contentDescription="@string/graph_bar_segment"
+                tools:ignore="ImageContrastCheck" />
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang7"/>
+        <ImageView
+                android:id="@+id/bar_segment_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="10.43"
+                android:background="#F1E05A"
+                android:contentDescription="@string/graph_bar_segment" />
+    </LinearLayout>
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang8"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang9"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="2dp">
 
-    <TextView
-            style="@style/LanguageTextView"
-            android:id="@+id/lang10"/>
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:clipToOutline="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="6dp"
+                    tools:targetApi="s">
 
+                <ImageView
+                        android:id="@+id/dot_1"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#A97BFF"
+                        android:contentDescription="@string/graph_bar_segment" />
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/language_label_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lang_stats_ex_1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="2dp">
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:clipToOutline="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="6dp"
+                    tools:targetApi="s">
+
+                <ImageView
+                        android:id="@+id/dot_2"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#3178C6"
+                        android:contentDescription="@string/graph_bar_segment"
+                        tools:ignore="ImageContrastCheck" />
+            </FrameLayout>
+
+
+            <TextView
+                    android:id="@+id/language_label_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lang_stats_ex_2"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="2dp">
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:clipToOutline="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="6dp"
+                    tools:targetApi="s">
+
+                <ImageView
+                        android:id="@+id/dot_3"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#0060AC"
+                        android:contentDescription="@string/graph_bar_segment" />
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/language_label_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lang_stats_ex_3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="2dp">
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:clipToOutline="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="6dp"
+                    tools:targetApi="s">
+
+                <ImageView
+                        android:id="@+id/dot_4"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#DEA584"
+                        android:contentDescription="@string/graph_bar_segment"
+                        tools:ignore="ImageContrastCheck" />
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/language_label_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lang_stats_ex_4"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+            <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_background"
+                    android:clipToOutline="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="6dp"
+                    tools:targetApi="s">
+
+                <ImageView
+                        android:id="@+id/dot_5"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:background="#F1E05A"
+                        android:contentDescription="@string/graph_bar_segment" />
+            </FrameLayout>
+
+            <TextView
+                    android:id="@+id/language_label_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lang_stats_ex_5"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
